@@ -6,8 +6,6 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         function sendData() {
-            const data = { action: "button_clicked", user_id: Telegram.WebApp.initDataUnsafe.user.id };
-            console.log(data);
             window.Telegram.WebApp.sendData("some data");  // Sends data to the bot
         }
 

@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Web App</title>
 </head>
 <body>
+    <button id="btn">Send Data</button>
 
-	<div class="container">
-		<div class="inner">
-			<div class="item">
-				<p>Тестовое сообщение</p>
-				<button class="btn" id="btn">Отправить</button>
-			</div>
-		</div>
-	</div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
 
+        tg.expand();
 
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script src="app.js"></script>
+        tg.MainButton.textColor = "#FFFFFF";
+        tg.MainButton.color = "#FF00FF";
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function() {
+            tg.MainButton.setText("Message sent!");
+            tg.MainButton.show();
+            tg.sendData("sendTestMessage");
+        });
+    </script>
 </body>
 </html>

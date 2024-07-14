@@ -7,6 +7,28 @@
 </head>
 <body>
     <h1>Login with Telegram</h1>
-    <script async src="https://telegram.org/js/telegram-widget.js?2" data-telegram-login="kazan_game_bot" data-size="large" data-auth-url="/login/telegram" data-request-access="write"></script>
+    <script>
+        // URL для GET-запроса
+const url = 'https://zero-kilometer.ru/uuid';
+
+// Отправка GET-запроса с использованием fetch
+fetch(url)
+  .then(response => {
+    // Проверка, был ли запрос успешным
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    // Преобразование ответа в JSON
+    return response.json();
+  })
+  .then(data => {
+    // Обработка данных ответа
+    console.log('Success:', data);
+  })
+  .catch(error => {
+    // Обработка ошибок
+    console.error('There was a problem with the fetch operation:', error);
+  });
+    </script>
 </body>
 </html>

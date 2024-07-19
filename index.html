@@ -12,7 +12,14 @@
 const url = 'https://zero-kilometer.ru/get';
 
 // Отправка GET-запроса с использованием fetch
-fetch(url)
+fetch(url, {
+     method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Origin': 'https://zero-kilometer.ru'  // Replace with your React app domain
+      }
+    }
+})
   .then(response => {
     // Проверка, был ли запрос успешным
     if (!response.ok) {
